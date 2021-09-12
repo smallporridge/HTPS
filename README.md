@@ -12,7 +12,7 @@ python dataset_new.py
 ```
 
 ## Citations
-If you use the code and datasets, please cite the following paper:  
+If you use the code, please cite the following paper:  
 ```
 @inproceedings{ZhouDW20,
   author    = {Yujia Zhou and
