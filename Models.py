@@ -298,6 +298,7 @@ class Contextual(nn.Module):
         d2enc_output_3 = torch.sum(d2enc_output_2, 1)
         qenc_output_3 = torch.sum(qenc_output_2, 1)
         all_qdenc = torch.sum(all_qdenc, 1)
+        all_qdenc = all_qdenc.view(-1, self.max_hislen + self.max_sessionlen, self.d_word_vec)
         long_qdenc, short_qdenc = torch.split(all_qdenc, [self.max_hislen, self.max_sessionlen], 1)
 
 
