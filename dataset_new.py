@@ -133,7 +133,7 @@ def sen2did(sen):
 			idx.append(vocab[word])
 		else:
 			idx.append(vocab['<unk>'])
-	idx = idx[:max_querylen]
+	idx = idx[:max_doclen]
 	padding = [0] * (max_doclen - len(idx))
 	idx = idx + padding
 	return	idx
@@ -145,7 +145,7 @@ def sen2id(sen):
 			idx.append(vocab[word])
 		else:
 			idx.append(vocab['<unk>'])
-	idx = idx[:max_querylen]
+	idx = idx[:max_qdlen]
 	padding = [0] * (max_qdlen - len(idx))
 	idx = idx + padding
 	return	idx
