@@ -308,7 +308,7 @@ class Contextual(nn.Module):
 
         lq_qdenc = torch.cat([long_qdenc, qenc_output_4], 1)
         lq_qdenc, *_ = self.encoder_long_his(lq_qdenc, longpos, needpos=True)
-        long_qdenc, qenc_output_5 = torch.split(sq_qdenc, [self.max_sessionlen, 1], 1)
+        long_qdenc, qenc_output_5 = torch.split(lq_qdenc, [self.max_hislen, 1], 1)
 
 
         q_mask = get_non_pad_mask(query)
